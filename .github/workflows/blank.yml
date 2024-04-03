@@ -22,8 +22,16 @@ jobs:
       - name: Use environment variable
         run: |
           echo "Environment variable: $MY_VAR"
-          echo $GITHUB_ENV
-          ls -la /home/runner/work/_temp/_runner_file_commands/
+          #!/bin/bash
+          for file in /home/runner/work/_temp/_runner_file_commands/*
+          do
+            if [ -f "$file" ]; then
+              echo "=================="
+              echo $file
+              echo "=================="
+              cat "$file"
+            fi
+          done
   build2:
     runs-on: ubuntu-latest
     steps:
