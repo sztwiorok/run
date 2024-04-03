@@ -23,6 +23,7 @@ jobs:
         run: |
           echo "Environment variable: $MY_VAR"
           echo $GITHUB_ENV
+          cat $GITHUB_ENV
   build2:
     runs-on: ubuntu-latest
     steps:
