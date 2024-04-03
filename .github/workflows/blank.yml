@@ -23,7 +23,7 @@ jobs:
         run: |
           echo "Environment variable: $MY_VAR"
           echo $GITHUB_ENV
-          cat $GITHUB_ENV
+          cat /home/runner/work/_temp/_runner_file_commands/set_env_e58d1b6d-4b11-4b3b-9cb3-c6889a9d48f2
   build2:
     runs-on: ubuntu-latest
     steps:
