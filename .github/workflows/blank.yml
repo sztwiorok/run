@@ -37,7 +37,7 @@ jobs:
     steps:
       - id: step_one
         run: |
-          echo "::set-output name=my_var::$(echo hello)"
+          sleep 20
       - id: step_two
         run: |
           echo "Previous step output: ${{ steps.step_one.outputs.my_var }}"
