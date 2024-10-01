@@ -15,7 +15,7 @@ on:
 
 jobs:
   build:
-    runs-on: dupa
+    runs-on: ubuntu-latest
     steps:
       - name: Set environment variable
         run: echo "MY_VAR=hello" >> $GITHUB_ENV
