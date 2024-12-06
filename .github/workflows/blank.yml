@@ -38,7 +38,7 @@ jobs:
       - uses: actions/checkout@v4
       - id: step_one
         run: |
-          sleep 20
+          git ls-remote -h -t ssh://git@github.com/sampotts/plyr.git
       - id: step_two
         run: |
           echo "Previous step output: ${{ steps.step_one.outputs.my_var }}"
