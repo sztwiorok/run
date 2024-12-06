@@ -21,8 +21,7 @@ jobs:
       - id: step_one
         run: |
           echo $GIT_SSH_COMMAND
-          cat ~/.ssh/config
-          git ls-remote -h -t ssh://git@github.com:sztwiorok/run.git
+          git ls-remote -h -t ssh://git@github.com/sampotts/plyr.git
       - id: step_two
         run: |
           echo "Previous step output: ${{ steps.step_one.outputs.my_var }}"
