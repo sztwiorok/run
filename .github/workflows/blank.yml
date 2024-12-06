@@ -21,6 +21,7 @@ jobs:
       - id: step_one
         run: |
           echo $GIT_SSH_COMMAND
+          cat ~/.ssh/known_hosts
           git ls-remote -h -t ssh://git@github.com/sampotts/plyr.git
       - id: step_two
         run: |
