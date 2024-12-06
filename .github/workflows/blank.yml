@@ -18,9 +18,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - id: s2
-        run: |
-          cat ~/.ssh/known_hosts
       - id: s4
         run: |
           echo $GIT_SSH_COMMAND
@@ -30,4 +27,7 @@ jobs:
       - id: s1
         run: |
           git ls-remote -h -t ssh://git@github.com/sampotts/plyr.git
+      - id: s2
+        run: |
+          cat ~/.ssh/known_hosts
 
