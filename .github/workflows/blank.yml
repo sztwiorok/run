@@ -18,6 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - id: s1
+        run: |
+           cat /etc/ssh/ssh_known_hosts
       - id: s6
         run: |
            ssh -vvv git@github.com || true
