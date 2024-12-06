@@ -18,13 +18,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - id: step_one
+      - id: s1
         run: |
-          printenv
-          echo $GIT_SSH_COMMAND
-          cat ~/.ssh/known_hosts
           git ls-remote -h -t ssh://git@github.com/sampotts/plyr.git
-      - id: step_two
+      - id: s2
         run: |
-          echo "Previous step output: ${{ steps.step_one.outputs.my_var }}"
+          cat ~/.ssh/known_hosts
+      - id: s4
+        run: |
+          echo $GIT_SSH_COMMAND
+      - id: s5
+        run: |
+          cat ~/.ssh/config
 
