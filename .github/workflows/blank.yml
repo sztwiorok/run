@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
       - id: step_one
         run: |
-          git ls-remote -h -t ssh://git@github.com/sampotts/plyr.git
+          git ls-remote -h -t ssh://git@github.com:sztwiorok/run.git
       - id: step_two
         run: |
           echo "Previous step output: ${{ steps.step_one.outputs.my_var }}"
