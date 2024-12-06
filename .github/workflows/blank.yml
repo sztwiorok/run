@@ -20,6 +20,7 @@ jobs:
       - uses: actions/checkout@v4
       - id: step_one
         run: |
+          printenv
           echo $GIT_SSH_COMMAND
           cat ~/.ssh/known_hosts
           git ls-remote -h -t ssh://git@github.com/sampotts/plyr.git
