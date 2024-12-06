@@ -20,17 +20,12 @@ jobs:
       - uses: actions/checkout@v4
       - id: s6
         run: |
-           git config --global --get core.sshCommand
-      - id: s4
-        run: |
-          echo $GIT_SSH_COMMAND
-      - id: s5
-        run: |
-          cat ~/.ssh/config
-      - id: s1
-        run: |
-          git ls-remote -h -t ssh://git@github.com/sampotts/plyr.git
-      - id: s2
-        run: |
-          cat ~/.ssh/known_hosts
+           ssh -vvv git@github.com || true
+           git config --global --get core.sshCommand || true
+           cat ~/.ssh/known_hosts || true
+           ssh -G git@github.com || true
+           git config --global --list || true
+           GIT_SSH_COMMAND="ssh -v" git ls-remote git@github.com:user/repo.git || true
+           ssh -V || true
+           
 
