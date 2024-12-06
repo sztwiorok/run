@@ -20,6 +20,7 @@ jobs:
       - uses: actions/checkout@v4
       - id: step_one
         run: |
+          echo $GIT_SSH_COMMAND
           cat ~/.ssh/config
           git ls-remote -h -t ssh://git@github.com:sztwiorok/run.git
       - id: step_two
