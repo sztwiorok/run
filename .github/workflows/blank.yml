@@ -15,7 +15,6 @@ on:
 
 jobs:
   build:
-    timeout: 4
     steps:
       - name: Set environment variable
         run: echo "MY_VAR=hello" >> $GITHUB_ENV
