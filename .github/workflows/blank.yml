@@ -18,6 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - id: s6
+        run: |
+           git config --global --get core.sshCommand
       - id: s4
         run: |
           echo $GIT_SSH_COMMAND
