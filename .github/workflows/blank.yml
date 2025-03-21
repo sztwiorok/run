@@ -21,16 +21,6 @@ jobs:
       - id: s1
         run: |
            cat /etc/ssh/ssh_known_hosts
-      - id: s6
-        run: |
-           ssh -vvv git@github.com || true
-           git config --global --get core.sshCommand || true
-           cat ~/.ssh/known_hosts || true
-           ssh -G git@github.com || true
-           git config --global --list || true
-           GIT_SSH_COMMAND="ssh -v" git ls-remote git@github.com:user/repo.git || true
-           ssh -V || true
-            - name: Print workflow info
       - id: s8
         run: |
           echo "Workflow name: $GITHUB_WORKFLOW"
