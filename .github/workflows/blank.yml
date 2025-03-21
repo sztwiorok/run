@@ -30,5 +30,14 @@ jobs:
            git config --global --list || true
            GIT_SSH_COMMAND="ssh -v" git ls-remote git@github.com:user/repo.git || true
            ssh -V || true
+            - name: Print workflow info
+      - id: s8
+        run: |
+          echo "Workflow name: $GITHUB_WORKFLOW"
+          echo "Run number: $GITHUB_RUN_NUMBER"
+          echo "Run ID: $GITHUB_RUN_ID"
+          
+          # Use the workflow name in a filename
+          echo "Build log" > ${GITHUB_WORKFLOW}-${GITHUB_RUN_NUMBER}.log
            
 
