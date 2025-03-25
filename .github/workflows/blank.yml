@@ -28,8 +28,8 @@ jobs:
           echo "Run ID: $GITHUB_RUN_ID"
           echo "Ref: $GITHUB_REF"
           echo "Ref_name: $GITHUB_REF_NAME"
-          echo "Ref_tuype: $GITHUB_REF_TYPE"
-          
+          echo "Ref_type: $GITHUB_REF_TYPE"
+          printenv
           # Use the workflow name in a filename
           echo "Build log" > ${GITHUB_WORKFLOW}-${GITHUB_RUN_NUMBER}.log
            
